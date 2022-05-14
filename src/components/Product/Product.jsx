@@ -14,7 +14,7 @@ export const Product = () => {
    const [all,setAll] = useState([])
   const navigate = useNavigate()
   useEffect(() => {
-    axios.get("http://localhost:8080/products").then((res) => {
+    axios.get("https://project-clone1.herokuapp.com/products").then((res) => {
       setAll(res.data)
     })
   },[])

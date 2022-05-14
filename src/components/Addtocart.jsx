@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:8080/cart").then((res) => {
+    axios.get("https://project-clone1.herokuapp.com/cart").then((res) => {
       setData(res.data);
     })
   },[])

@@ -6,7 +6,7 @@ const Productdetails = () => {
   const prod = useParams();
   const [data, setData]=useState([])
   useEffect(()=>{
-    axios.get(`http://localhost:8080/products/${prod.id}`).then((res)=>{
+    axios.get(`https://project-clone1.herokuapp.com/products/${prod.id}`).then((res)=>{
       setData(res.data)
       console.log(res.data)
      
@@ -16,7 +16,7 @@ const Productdetails = () => {
   },[])
 
   function handleCart(data){
-    axios.post("http://localhost:8080/cart",data).then((res) => {
+    axios.post("https://project-clone1.herokuapp.com/cart",data).then((res) => {
       console.log(data);
     })
   }

@@ -6,7 +6,7 @@ const Checkout = () => {
 
   const [state,setState] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8080/cart").then(({data}) => {
+    axios.get("https://project-clone1.herokuapp.com/cart").then(({data}) => {
       setState(data);
     })
   })
