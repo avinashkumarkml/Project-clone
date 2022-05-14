@@ -1,0 +1,19 @@
+
+.product>div{
+    border: 1px solid black;
+   text-align: center;
+
+}
+
+.product>div>img{
+    width:30%;
+}
+
+
+.all{
+    margin-top:50px
+}
+
+.main{
+    margin-top:50px
+}

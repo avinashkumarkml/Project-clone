@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.first-image > img{
+    width: 100%;
+    height: 20%;
+    border: 1px solid red;
+    cursor: pointer;
+
+}
+.firstimage1{
+    width: 100%;
+}
+
+.kitchen{
+    height: 100%;
+    /* width: 95%; */
+    display: flex;
+    justify-content: space-between;
+    gap: 3%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.kitchenimage{
+    height: 100%;
+    width: 50%;
+}
+
+.kitchenware{
+    margin-left: 42%;
+    font-size: 30%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: rgb(117, 73, 73);
+
+}
+
+/* for footwear */
+
+.footware{
+    height: 100%;
+    /* width: 95%; */
+    display: flex;
+    justify-content: space-between;
+    gap: 3%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    
+}
+
+.footwareimage{
+    height: 100%;
+    width: 50%;
+}
+
+.lastcontent{
+    text-align: center;
+    margin-top: 3%;
+    width: 90%;
+    margin-left: 5%;
+    font-size: bold;
+    color: rgb(117, 73, 73);
+}
+
+
+.lastcontent3{
+    display: flex;
+    margin-top: 2%;
+    width: 70%;
+    margin-left: 15%;
+    font-size:130%;
+    gap: 3%;
+    color: rgb(117, 73, 73);
+    margin-bottom: 2%;
+    /* border: 1px solid red; */
+}
+
+
+
+
+
+
+
+
+
+
+
+

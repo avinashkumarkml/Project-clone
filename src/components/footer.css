@@ -1,0 +1,40 @@
+.navbar-container{
+    background-color:#831843;
+    color:white;
+    padding:2rem;
+    border-top-right-radius:2rem;
+    border-bottom-left-radius:2rem;
+    font-weight:bold;
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  .nav-links{
+    float:right;
+    font-family:Arial;
+    padding:0.5rem;
+    color:white;
+    list-style:none;
+  }
+  
+  .links{
+    color:white;
+    font-weight:bold;
+    text-decoration:none;
+  }
+  
+  .footer{
+    background-color:#831843;
+    color:white;
+    padding:2rem;
+    /* border-top-right-radius:2rem; */
+    /* border-bottom-left-radius:2rem; */
+    /* position: fixed; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height:2%;
+  background-color: rgb(40, 115, 155);
+  color: white;
+  text-align: center;
+  }
+  
