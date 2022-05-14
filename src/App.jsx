@@ -10,6 +10,7 @@ import Wishlist from './components/Wishlist'
 import Addtocart from './components/Addtocart'
 import Admin from './components/Admin'
 import {Product} from "./components/Product/Product"
+import {Payment} from "./components/Payment"
 import Productdetails from './components/Productdetails'
 import Checkout from './components/Checkout'
 import "./App.css"
@@ -18,7 +19,7 @@ import "./App.css"
 
 export const App = () => {
   return (
-    <div>
+    <>
     <Navbar />
     
      <Routes>
@@ -30,12 +31,14 @@ export const App = () => {
        <Route path="/Admin" element={<Admin />} ></Route>
        <Route path="/Addtocart" element={<Addtocart />} ></Route>
        <Route path="/Footer" element={<Footer />} ></Route>
-       <Route path="/:id" element={<Productdetails />} ></Route>
+       <Route path="/product/:id" element={<Productdetails />} ></Route>
        <Route path="/Checkout" element={<Checkout />} ></Route>
        <Route path="/Product" element={<Product />} />
+       <Route path="/payment" element={<Payment />} />
      </Routes>
+     
      <Footer/>
-   </div>
+   </>
  )
 }
 

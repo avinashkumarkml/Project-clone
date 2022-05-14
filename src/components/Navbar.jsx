@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./navbar.css"
+import "./navbar.css"
 import {Link}from "react-router-dom"
 
 
@@ -10,7 +10,7 @@ function Click() {
 
 function Navbar() {
   return (
-    <>
+    <div style={{marginBottom: "55px"}}>
     
     <header className="main-header">
       
@@ -41,12 +41,12 @@ function Navbar() {
           <Link to="./Home">Wishlist</Link>
           </li>
           <li>
-          <Link to="./Home">Addtocart</Link>
+          <Link to="./Addtocart">Addtocart</Link>
           </li>
         </ul>
       </nav>
     </header>
-    </>
+    </div>
   );
 }
 

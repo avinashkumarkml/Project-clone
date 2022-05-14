@@ -4,7 +4,7 @@ import "./footer.css";
 
 export default function Footer(){
   return (
-    <div>
+    <div style={{marginTop:"30px"}}>
     <footer className="footer">
     <div> <img src="https://www.uboric.com/wp-content/uploads/2021/04/uboric.svg" alt="" height="10%" width="10%"/></div>
     <div>
