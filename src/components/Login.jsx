@@ -1,58 +1,65 @@
-import React from "react";
-import { useContext } from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import { AuthContext } from "./context/AuthContext";
-// import { Form } from "./EditBookData";
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import { Link, useNavigate } from 'react-router-dom';
+import {useState} from "react";
 
-// add input styling
-export const Input = styled.input`
- 
-`;
-
-
-export const Login = () => {
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const { token, handleLogin } = useContext(AuthContext);
-
+export const Login = ({setLog}) => {
   const navigate = useNavigate();
+  const [state,setState] = useState(false);
+  const [hidden,setHidden] = useState("");
+  const [data,setData] = useState({
+    email:"",
+    password:""
+  });
 
+  function handleChange(e){
+    setState(false)
+    const {name} = e.target;
+    setData({
+      ...data,
+      [name]:e.target.value
+    })
+  }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    handleLogin(email, password);
-  };
-  useEffect(() => {
-    if (token) {
-      navigate("/Product", { replace: true });
-    }
-  }, [token]);
-  return (
-    <div className="divname">
-    {/* <h1>Hii my name is dfjflksdjf</h1> */}
-      <form onSubmit={handleSubmit}>
+  function handleSubmit(){
+    if(data.email && data.password){
+      let x = JSON.parse(localStorage.getItem("auth"));;
+      for(let i=0; i<x.length; i++){
+        if(x[i].email === data.email){
+          if(x[i].password === data.password){
+            setLog(true)
+            navigate("/");
+          }else{
+            setHidden("Your email or password is wrong")
+            setState(true)
+          }
+        }
+        else{
+          setHidden("Your email or password is wrong")
+          setState(true)
+        }
+      }
       
-        <Input
-          data-testid="login-form-email"
-          placeholder="Enter Email"
-          value={email}
-          type="text"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <Input
-          data-testid="login-form-password"
-          placeholder="Enter Password"
-          value={password}
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <Input value = "Login" type={"submit"} data-testid="login-form-submit" />
-      </form>
+    }
+    else{
+      setHidden("please fill all the details")
+      setState(true)
+    }
+  }
+
+  return (
+    <div style={{margin:"auto",textAlign:"center"}}>
+      <br />
+      <h1>Login</h1>
+      <TextField name="email" onChange={handleChange} style={{width:"30%",margin:"25px 0"}} id="demo-helper-text-misaligned-no-helper" label="Email" />
+      <br />
+      <TextField name="password" onChange={handleChange} type="password"  style={{width:"30%"}} id="demo-helper-text-misaligned-no-helper" label="Password" />
+      <br />
+      {state ? <p style={{color:"red"}}>{hidden}</p> : null}
+      <br />
+      <Button onClick={handleSubmit} style={{width:"30%",height:"50px"}} variant="contained">LOGIN</Button>
+      <br />
+      <Link to="/Signup">Create an Account</Link>
     </div>
-  );
-};
+  )
+}

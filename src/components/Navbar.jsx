@@ -1,6 +1,8 @@
 import React from "react";
 import "./navbar.css"
 import {Link}from "react-router-dom"
+import {useSelector} from "react-redux"
+
 
 
 function Click() {
@@ -8,18 +10,20 @@ function Click() {
   navbar.classList.toggle("active");
 }
 
-function Navbar() {
+function Navbar({log,setLog}) {
+  const state = useSelector((state)=>state.addItems)
+ 
   return (
     <div style={{marginBottom: "55px"}}>
     
     <header className="main-header">
       
-      <a href="Home" className="brand-logo">
+      <Link to="/" className="brand-logo">
         <div className="brand-logo-name">
           <img src="https://www.uboric.com/wp-content/uploads/2021/04/uboric.svg" alt="" height="30%" width="30%"/>
           
         </div>
-      </a>
+      </Link>
       <div href="#" className="toggle-button" onClick={Click}>
         <span className="bar"></span>
         <span className="bar"></span>
@@ -29,19 +33,18 @@ function Navbar() {
         <ul>
           
           <li>
-          <Link to="./Login">Sign In</Link>
-          </li>
-          <li>
           <Link to="/Product">Products</Link>
           </li>
           <li>
-          <Link to="./Signup">Signup</Link>
+          <Link to="/Addtocart">
+          <span className="fa fa-shopping-cart me-1.log(state"></span>
+            Cart :({state.length})</Link>
           </li>
           <li>
-          <Link to="./Home">Wishlist</Link>
-          </li>
-          <li>
-          <Link to="./Addtocart">Addtocart</Link>
+          {log ? 
+          <button style={{backgroundColor:"#28739b",border:"none"}} onClick={() => setLog(false)}>Logout</button> : 
+          <Link  to="/Signup">
+            <span className="fa fa-sign-in me-1"></span>SignUp</Link>}
           </li>
         </ul>
       </nav>

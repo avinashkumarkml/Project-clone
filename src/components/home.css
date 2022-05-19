@@ -26,6 +26,14 @@
 .kitchenimage{
     height: 100%;
     width: 50%;
+
+}
+/* .kitchen:hover{
+    height: 105%;
+    width: 105%; 
+} */
+.carousel-inner{
+    cursor: pointer;
 }
 
 .kitchenware{

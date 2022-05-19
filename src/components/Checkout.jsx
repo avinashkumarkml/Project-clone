@@ -12,14 +12,14 @@ const Checkout = () => {
   })
   var total = 0;
   const itemList=(item)=>{
-    let a = +item.price
-      total=total+a;    
+    let a = item.price.split(",").join("");
+      total=total+(+a)*item.quantity;    
       return(
           <li className="list-group-item d-flex justify-content-between lh-sm">
           <div>
             <h6 className="my-0">{item.name}</h6>
           </div>
-          <span  style={{width:"80px"}} className="text-muted">Rs {a}</span>
+          <span style={{width:"180px"}} className="text-muted">Rs {a} <b>({item.quantity}) qty</b></span>
         </li>
         
       )

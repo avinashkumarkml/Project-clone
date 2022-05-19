@@ -1,12 +1,12 @@
 
 import React from 'react'
 import { useState,useEffect } from 'react'
-import {Prod} from "./ProdutOne"
-import "./productOne.css"
+// import {Prod} from "./ProdutOne"
 import { Link } from "react-router-dom"
 import { useNavigate } from 'react-router-dom'
 import Productdetails from '../Productdetails'
 import axios from "axios";
+import "./product.css"
 
 
 export const Product = () => {
@@ -36,26 +36,26 @@ export const Product = () => {
   return (
    <div className="main"> 
    <div style={{margin:"80px"}}>
-   <h1>filter by price </h1>
+   <h3>Sort by price </h3>
       <select onChange={handle}>
-        <option>------</option>
-        <option value="low">Low to high </option>
-        <option value="high">high to low </option>
+        <option></option>
+        <option value="low">Ascending </option>
+        <option value="high">descending </option>
       </select>
    </div>
-      <Prod className="product">
+      <div className="product">
       
         {all.map((e)=>{
-            return <div key={Math.random()}>
-            <img src={e.img} />
-            <h3>{e.name}</h3>
-           <h3> {e.price}</h3>
-           <Link to={`/product/${e.id}`} className="btn btn-outline-primary">Buy Now</Link>
-           </div>
-        
-        
+            return (
+              <div style={{border: '1px solid grey',height:"400px"}} key={Math.random()}>
+              <img style={{width:"100%"}} src={e.img} height="60%"/>
+              <p>{e.name}</p>
+              <p> {e.price} Rs</p>
+              <Link to={`/product/${e.id}`} className="btn btn-outline-primary">Buy Now</Link>
+              </div>
+            )  
         })}
-    </Prod>
+    </div>
       
       
     </div>
